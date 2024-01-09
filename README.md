@@ -7,7 +7,7 @@ In this project, you are going to implement a basic marketplace model. This mode
 
 In our market model, there are two priority queues for storing orders. In a priority queue, elements having the highest priority serve before. The priority rules are written in the next sections. With these rules, your market implementation should make transactions if these two priority queues’ tops overlap.
 
-nput/Output
+Input/Output
 The first line of the input file specifies the random seed that you have to use to generate random numbers in the project: A
 
 The second line of the input file specifies the initial transaction fee of the marketplace, the number of users, and number of queries: B C D
