@@ -26,39 +26,56 @@ Trader specific queries:
 ➔ 10: Give buying order of specific price
 
 10 <trader_id> <price> <amount>
+
+
 ➔ 11: Give buying order of market price
 
 11 <trader_id> <amount>
+
+
 Note: This is similar to Query#10, but it takes the current selling price as price. Note: If there is no current selling price then increment the number of invalid queries.
 
 ➔ 20: Give selling order of specific price
 
 20 <trader_id> <price> <amount>
+
+
 ➔ 21: Give selling order of market price
 
 21 <trader_id> <amount>
+
+
 Note: This is similar to Query#20, but it takes the current buying price as price.
 
 ➔ 3: Deposit a certain amount of dollars to the wallet
 
 3 <trader_id> <amount>
+
+
 ➔ 4: Withdraw a certain amount of dollars from the wallet
 
 4 <trader_id> <amount>
+
+
 ➔ 5: Print wallet status
 
 5 <trader_id>
+
+
 Prints “Trader : <trader_s_dollars>$ <trader_s_PQoins>PQ” to the output file.
 
 System Queries
 ➔ 777: Give rewards to all traders
 
 777
+
+
 When this query is read, the system creates and distributes random amounts of PQoins to all traders. For each trader add myRandom.nextDouble()*coins to the trader’s wallet.
 
 ➔ 666: Make an open market operation
 
 666 <price>
+
 When this query is read, the system compensates buying or selling orders in order to set the price of PQoin to the given price.
 
 This query can increase or decrease the total amount of PQoin in the market.
@@ -66,16 +83,22 @@ This query can increase or decrease the total amount of PQoin in the market.
 ➔ 500: Print the current market size
 
 500
+
+
 Prints “Current market size: <total_$_in_buying_pq> <total_PQoin_in_selling_pq>” to the output file.
 
 ➔ 501: Print number of successful transactions
 
 501
+
+
 Prints “Number of successful transactions: <num_of_successful_transaction>” to the output file.
 
 ➔ 502: Print the number of invalid queries
 
 502
+
+
 Prints “<number_of_invalid_queries>” to the output file.
 
 Note: If a trader is unable to satisfy the query’s liabilities, then the number of invalid queries is incremented by one.
@@ -83,9 +106,13 @@ Note: If a trader is unable to satisfy the query’s liabilities, then the numbe
 ➔ 505: Print the current prices
 
 505
+
+
 Prints “Current prices: <cp_buying> <cp_selling> <cp_average>” to the output file. Note: If one of the PriorityQueues is empty then the price related to it, is not included in the average current price.
 
 ➔ 555: Print all traders’ wallet status
 
 555
+
+
 Prints “<trader_s_dollars>$ <trader_s_PQoins>PQ” of all traders.
